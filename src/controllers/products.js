@@ -1,11 +1,12 @@
 const Products = require('../model/products');
+const connectDb = require('../database/db');
 
 const productsList = async (req, res) => {
     try {
-
+        await connectDb();
         const data = await Products.find({ category: 'smartphones' });
         return res.status(200).send({ status: true, data: data })
-        
+
     } catch (error) {
         console.log(error)
     }

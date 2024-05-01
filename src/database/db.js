@@ -3,11 +3,9 @@ const mongoose = require('mongoose');
 
 const connectDb = async () => {
     try {
-        const connection = await mongoose.connect(process.env.DATABASE_URL , {
-            useNewUrlParser: true,
-        })
+        await mongoose.connect(process.env.DATABASE_URL)
         console.log(`MongoDB Connected`);
-        
+
     } catch (error) {
         console.log(error)
     }
@@ -15,7 +13,7 @@ const connectDb = async () => {
 }
 
 
-module.exports =  connectDb ;
+module.exports = connectDb;
 
 
 
