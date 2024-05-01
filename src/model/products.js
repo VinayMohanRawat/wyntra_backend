@@ -24,9 +24,10 @@ const productSchema = new mongoose.Schema({
     category: { type: String },
     thumbnail: { type: String },
     images: { type: Array }
-}, 
-{ timestamps: true },
+},
+    { timestamps: true },
     {
+        capped: { size: 1024 },
         bufferCommands: false,
         autoCreate: false
     });
