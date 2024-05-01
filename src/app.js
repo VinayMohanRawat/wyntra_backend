@@ -17,9 +17,10 @@ app.use((req, res, next) => {
     next()
 })
 
+connectDb();
+
 app.use('/', route);
 
-connectDb();
 
 app.listen(PORT, () => {
     console.log(`Express is running on PORT ${PORT}`);
