@@ -24,7 +24,12 @@ const productSchema = new mongoose.Schema({
     category: { type: String },
     thumbnail: { type: String },
     images: { type: Array }
-}, { timestamps: true });
+}, 
+{ timestamps: true },
+    {
+        bufferCommands: false,
+        autoCreate: false
+    });
 
 
 module.exports = mongoose.model('products', productSchema)
