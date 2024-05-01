@@ -1,10 +1,14 @@
 const Products = require('../model/products');
 
 const productsList = async (req, res) => {
+    try {
 
-    const data = await Products.find({ category: 'smartphones' });
-    return res.status(200).send({ status: true, data: data })
-
+        const data = await Products.find({ category: 'smartphones' });
+        return res.status(200).send({ status: true, data: data })
+        
+    } catch (error) {
+        console.log(error)
+    }
 }
 
 const productsCategoryList = async (req, res) => {
